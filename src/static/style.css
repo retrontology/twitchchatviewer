@@ -89,6 +89,40 @@ input.page-selection::-webkit-inner-spin-button {
   margin: 0;
 }
 
+div.header-toolbar {
+    background-color: #2f2736;
+    font-size: 24px;
+    
+}
+
+div.header-home-container {
+    display: inline-block;
+    padding: 8px;
+    width: 10%;
+}
+
+div.header-subpages-container {
+    display: inline-block;
+    padding: 8px;
+    padding-inline: 32px;
+    text-align: center;
+    width: 70%;
+}
+
+a.home-button {
+    margin-left: 32px
+}
+
+a.header-channels {
+    display: inline-flex;
+    margin-inline: 64px;
+}
+
+a.header-users {
+    display: inline-flex;
+    margin-inline: 64px;
+}
+
 a.first-page, a.previous-page, a.next-page, a.last-page {
     border: 0px #0b0a0d;
     background-color: #2f2736;

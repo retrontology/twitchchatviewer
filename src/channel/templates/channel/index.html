@@ -1,8 +1,9 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 <html>
-    <h1>Channels</h1>
     <body>
+        {% include "header.html" %}
+        <h1>Channels</h1>
         <ul class="channel-list">
             {% for channel in channels %}
                 <li class="channel-list-item">
