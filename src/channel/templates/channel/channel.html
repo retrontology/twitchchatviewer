@@ -3,11 +3,12 @@
 <script src="{% static 'emotes.js' %}"></script> 
 <script src="{% static 'page_navigation.js' %}"></script> 
 <html>
+    {% include "header.html" %}
     <body onload="parse_table()">
         <div class="messages-navigation">
-            <span class="channel-title">
+            <h1 class="channel-title">
                 <a class="channel-title" href="{{ channel }}">{{ channel }}</a>
-            </span>
+            </h1>
             <span class="page-navigation">
                 <a class="first-page"{% if page > 0 %} href="{% url 'channel' channel %}{% if username is not None %}?username={{ username }}{% endif %}" title='First Page'{% endif %}><<</a>
                 <a class="previous-page"{% if page > 0 %} href="{% url 'channel' channel %}?{% if username is not None %}username={{ username }}&{% endif %}page={{ page|add:'-1' }}&limit={{ limit }}" title='Prev Page'{% endif %}><</a>
