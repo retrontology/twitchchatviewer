@@ -92,7 +92,11 @@ input.page-selection::-webkit-inner-spin-button {
 div.header-toolbar {
     background-color: #2f2736;
     font-size: 24px;
-    
+    font-weight: bold;
+}
+
+h1 {
+    font-weight: lighter
 }
 
 div.header-home-container {
