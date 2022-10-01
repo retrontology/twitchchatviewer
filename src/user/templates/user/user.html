@@ -6,9 +6,9 @@
     {% include "header.html" %}
     <body onload="parse_table()">
         <div class="messages-navigation">
-            <span class="user-title">
+            <h1 class="user-title">
                 <a class="user-title" href="{{ username }}">{{ username }}</a>
-            </span>
+            </h1>
             <span class="page-navigation" name="page-navigation">
                 <a class="first-page"{% if page > 0 %} href="{% url 'user' username %}?page=0&limit={{ limit }}" title='First Page'{% endif %}><<</a>
                 <a class="previous-page"{% if page > 0 %} href="{% url 'user' username %}?page={{ page|add:'-1' }}&limit={{ limit }}" title='Prev Page'{% endif %}><</a>
