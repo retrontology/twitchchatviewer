@@ -97,6 +97,8 @@ div.header-toolbar {
 
 h1 {
     font-weight: lighter
+    font-family: var(--font-family);
+    font-size: 36px;
 }
 
 div.header-home-container {
