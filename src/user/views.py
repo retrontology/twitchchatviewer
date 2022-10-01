@@ -1,12 +1,17 @@
 from django.shortcuts import render
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from datetime import datetime
 from webserver.messages import *
 
 # Create your views here.
 def index(request):
-    raise Http404("Incorrect usage") 
+    username = request.GET.get('username', None)
+    if username:
+        return(HttpResponseRedirect(f'/user/{username}'))
+    else:
+        template = loader.get_template('user/index.html')
+        return HttpResponse(template.render({}, request))
 
 def user(request, username):
     username = username.lower()

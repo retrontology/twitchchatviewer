@@ -1,0 +1,11 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<html>
+    <body>
+        {% include "header.html" %}
+        <h1>Search for user</h1>
+        <form action="/user" method="get" autocomplete="on">
+            <input type="text" id="username" name="username">
+        </form> 
+    </body>
+</html>
