@@ -110,13 +110,13 @@ h1.user-search-header {
     text-align: center;
 }
 
-h1.user-not-found {
+h1.user-not-found, h1.channel-not-found {
     text-align: inherit;
     margin-top: 64px;
     margin-bottom: 16px;
 }
 
-div.user-not-found {
+div.user-not-found, div.channel-not-found {
     text-align: center;
 }
 
