@@ -36,4 +36,5 @@ def channel(request, channel):
         }
         return HttpResponse(template.render(context, request))
     else:
-        raise Http404("Channel not found in database") 
+        template = loader.get_template('channel/notfound.html')
+        return HttpResponse(template.render({'channel': channel}, request), status=404)

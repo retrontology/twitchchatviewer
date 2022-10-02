@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<html>
+    <body>
+        {% include "header.html" %}
+        <div class="channel-not-found">
+            <h1 class="channel-not-found">
+                {{ channel }} was not found in our database
+            </h1>
+            <img class="channel-not-found" src="{% static 'peepoSad.png' %}">
+        </div>
+    </body>
+</html>
