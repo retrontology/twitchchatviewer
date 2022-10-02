@@ -110,6 +110,16 @@ h1.user-search-header {
     text-align: center;
 }
 
+h1.user-not-found {
+    text-align: inherit;
+    margin-top: 64px;
+    margin-bottom: 16px;
+}
+
+div.user-not-found {
+    text-align: center;
+}
+
 form.user-search-form {
     text-align: center;
 }
