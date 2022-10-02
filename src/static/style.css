@@ -106,6 +106,29 @@ h1 {
     margin-bottom: -4px;
 }
 
+h1.user-search-header {
+    text-align: center;
+}
+
+h1.user-not-found, h1.channel-not-found {
+    text-align: inherit;
+    margin-top: 64px;
+    margin-bottom: 16px;
+}
+
+div.user-not-found, div.channel-not-found {
+    text-align: center;
+}
+
+form.user-search-form {
+    text-align: center;
+}
+
+input.user-search-input {
+    margin: 12px;
+    font-size: 24px;
+}
+
 div.header-home-container {
     display: inline-block;
     padding: 8px;

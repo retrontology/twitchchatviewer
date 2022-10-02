@@ -1,0 +1,13 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<html>
+    <body>
+        {% include "header.html" %}
+        <div class="user-not-found">
+            <h1 class="user-not-found">
+                {{ username }} was not found in our database
+            </h1>
+            <img class="user-not-found" src="{% static 'peepoSad.png' %}">
+        </div>
+    </body>
+</html>
