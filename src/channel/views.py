@@ -3,10 +3,26 @@ from django.template.context import make_context
 from django.template import loader, Template
 from datetime import datetime
 from webserver.messages import *
+from webserver.channels import *
 
 def index(request):
     template = loader.get_template('channel/index.html')
-    return HttpResponse(template.render({'channels': get_channels()}, request))
+    limit = int(request.GET.get('limit', DEFAULT_LIMIT))
+    page = int(request.GET.get('page', 0))
+    page_count = get_channels_page_count(limit=limit)
+    channels = get_channels(limit=limit, page=page)
+    return HttpResponse(
+        template.render
+        (
+            {
+                'channels': channels,
+                'page': page,
+                'limit': limit,
+                'last_page': page_count-1
+            },
+            request
+        )
+    )
 
 def channel(request, channel):
     channel = channel.lower()
