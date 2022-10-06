@@ -106,6 +106,10 @@ h1 {
     margin-bottom: -4px;
 }
 
+h1.channels-header {
+    display: inline-flex;
+}
+
 h1.user-search-header {
     text-align: center;
 }
@@ -114,6 +118,10 @@ h1.user-not-found, h1.channel-not-found {
     text-align: inherit;
     margin-top: 64px;
     margin-bottom: 16px;
+}
+
+div.channels-header {
+    vertical-align: bottom;
 }
 
 div.user-not-found, div.channel-not-found {
@@ -196,6 +204,7 @@ input.page-selection {
 ul.channel-list {
     list-style-type: none;
     padding: 0;
+    margin: 0px;
 }
 
 li.channel-list-item {

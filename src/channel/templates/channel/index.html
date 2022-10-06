@@ -7,7 +7,6 @@
     <body onload="parse_table()">
         <div class="channels-header">
             <h1 class="channels-header">Channels</h1>
-            <div class="channels-navigation">
                 <span class="page-navigation">
                     <a class="first-page"{% if page > 0 %} href="?page=0&limit={{ limit }}" title='First Page'{% endif %}><<</a>
                     <a class="previous-page"{% if page > 0 %} href="?page={{ page|add:'-1' }}&limit={{ limit }}" title='Prev Page'{% endif %}><</a>
@@ -15,7 +14,6 @@
                     <a class="next-page"{% if page < last_page %} href="?page={{ page|add:'1' }}&limit={{ limit }}" title='Next Page'{% endif %}>></a>
                     <a class="last-page"{% if page < last_page %} href="?page={{ last_page }}&limit={{ limit }}" title='Last Page'{% endif %}>{{ last_page}} >></a>
                 </span>
-            </div>
         </div>
         <ul class="channel-list">
             {% for channel in channels %}
