@@ -140,10 +140,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # MongoDB Settings
 # List of (Host, Port) tuples
-MONGO_HOSTS = [('192.168.1.32', '27017')]
-MONGO_USER = ''
-MONGO_PASS = ''
-MONGO_AUTHDB = ''
+MONGO_HOSTS = [('192.168.1.100', '27017')]
+MONGO_USER = 'twitch_logger'
+MONGO_PASS = 'fpoSJPE3SK6rC4jovWjHM52F'
+MONGO_AUTHDB = 'admin'
 # Dictionary of options
 MONGO_OPTIONS = {}
 # Name of Mongo DB for twitchlogger

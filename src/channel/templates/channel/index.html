@@ -1,18 +1,40 @@
 {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+<script src="{% static 'emotes.js' %}"></script> 
+<script src="{% static 'page_navigation.js' %}"></script> 
 <html>
-    <body>
-        {% include "header.html" %}
-        <h1>Channels</h1>
+    {% include "header.html" %}
+    <body onload="parse_table()">
+        <div class="channels-header">
+            <h1 class="channels-header">Channels</h1>
+                <span class="page-navigation">
+                    <a class="first-page"{% if page > 0 %} href="?page=0&limit={{ limit }}" title='First Page'{% endif %}><<</a>
+                    <a class="previous-page"{% if page > 0 %} href="?page={{ page|add:'-1' }}&limit={{ limit }}" title='Prev Page'{% endif %}><</a>
+                    <input class="page-selection" size="3" onchange="change_page.call(this);" type="number" min="0" max="{{ last_page }}" data-url="?limit={{ limit }}" value="{{ page }}">
+                    <a class="next-page"{% if page < last_page %} href="?page={{ page|add:'1' }}&limit={{ limit }}" title='Next Page'{% endif %}>></a>
+                    <a class="last-page"{% if page < last_page %} href="?page={{ last_page }}&limit={{ limit }}" title='Last Page'{% endif %}>{{ last_page}} >></a>
+                </span>
+        </div>
         <ul class="channel-list">
             {% for channel in channels %}
-                <li class="channel-list-item">
-                    <a class="channel-list-item-link" href="{{ channel.channel }}">
-                        <span class="channel-list-item-channel">{{ channel.channel }}</span>
-                        <span class="channel-list-item-messages">{{ channel.message_count }}</span>
-                    </a>
-                </li>
+            <li class="channel-list-item">
+                <a class="channel-list-item-link" href="{{ channel.channel }}">
+                    <span class="channel-list-item-channel">{{ channel.channel }}</span>
+                    <span class="channel-list-item-messages">{{ channel.message_count }}</span>
+                </a>
+            </li>
             {% endfor %}
         </ul>
+        <div class="channels-footer">
+            <div class="channels-navigation">
+                <span class="page-navigation">
+                    <a class="first-page"{% if page > 0 %} href="?page=0&limit={{ limit }}" title='First Page'{% endif %}><<</a>
+                    <a class="previous-page"{% if page > 0 %} href="?page={{ page|add:'-1' }}&limit={{ limit }}" title='Prev Page'{% endif %}><</a>
+                    <input class="page-selection" size="3" onchange="change_page.call(this);" type="number" min="0" max="{{ last_page }}" data-url="?limit={{ limit }}" value="{{ page }}">
+                    <a class="next-page"{% if page < last_page %} href="?page={{ page|add:'1' }}&limit={{ limit }}" title='Next Page'{% endif %}>></a>
+                    <a class="last-page"{% if page < last_page %} href="?page={{ last_page }}&limit={{ limit }}" title='Last Page'{% endif %}>{{ last_page}} >></a>
+                </span>
+            </div>
+        </div>
     </body>
 </html>
