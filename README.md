@@ -10,7 +10,8 @@ A website written in Django and JavaScript, designed to view messages from Twitc
 1. Install the webserver
    a. Copy the `src` directory to `/var/www/webserver` (or wherever you want to serve your files from).
    b. Enter the directory you just copied ot, edit the `420-twitchchatviewer.conf` configuration file and define `WEBSERVERROOT` as the directory you copied to in the previous step.
-   c. Initiate the db by running the commands: 
+   c. Enter the mongodb connection details at the bottom of `webserver/settings.py`
+   d. Initiate the db by running the commands: 
    ```
    sudo python manage.py makemigrations
    sudo python manage.py migrate
